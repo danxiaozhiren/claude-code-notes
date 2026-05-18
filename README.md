@@ -1,7 +1,7 @@
 # Claude Code Notes
 
 > 当前定位：围绕 Claude Code 的系统学习、文章写作与读者实践资料库。  
-> 作者：数据室 伍涛。  
+> 作者：wt  
 > 当前仓库快照：2026-05-18。  
 > 既有文章的官方文档核查日期以正文标注为准，复用或发布前需要重新核查。
 
@@ -9,7 +9,7 @@
 
 这个仓库用于把 Claude Code 的系统学习沉淀成一组可发布、可复核、可迭代的中文文章。
 
-写作初衷：在斌总和葛处的鼓励与倡导下，围绕 Claude Code 做一次面向底层原理的系统学习，把学习过程中的理解、积累和实践经验沉淀下来，并以文章形式分享给更多同事和读者。
+写作初衷：在领导的鼓励与倡导下，围绕 Claude Code 做一次面向底层原理的系统学习，把学习过程中的理解、积累和实践经验沉淀下来，并以文章形式分享给更多同事和读者。
 
 核心主线是：
 
@@ -33,7 +33,8 @@ Claude Code 不是普通聊天工具，
 ├── articles/
 │   ├── 01-Claude-Code-不是聊天工具，而是-Agentic-Harness.md
 │   ├── 02-Claude-Code-的记忆不是“记住”，而是一次-Context-装载工程.md
-│   └── 03-Claude-Code-工具系统为什么能“自己动手”.md
+│   ├── 03-Claude-Code-工具系统为什么能“自己动手”.md
+│   └── 04-Claude-Code-权限、安全与-Prompt-Injection：Agent-的边界在哪里.md
 └── docs/
     ├── 00-Claude-Code-系统学习路线.md
     ├── 00-Claude-Code-八篇文章写作规划.md
@@ -48,6 +49,7 @@ Claude Code 不是普通聊天工具，
 - `articles/01-Claude-Code-不是聊天工具，而是-Agentic-Harness.md`：系列第 1 篇初稿，建立 Claude Code 作为 agentic harness / agent runtime 的总模型。
 - `articles/02-Claude-Code-的记忆不是“记住”，而是一次-Context-装载工程.md`：系列第 2 篇初稿，聚焦 memory、instructions、rules、skills、MCP 与 context 装载机制。
 - `articles/03-Claude-Code-工具系统为什么能“自己动手”.md`：系列第 3 篇初稿，解释工具调用结果如何动态进入 context 并推动下一步行动。
+- `articles/04-Claude-Code-权限、安全与-Prompt-Injection：Agent-的边界在哪里.md`：系列第 4 篇初稿，解释 permissions、sandbox、managed settings、prompt injection、MCP 和 CI 最小权限如何共同构成 agent 边界。
 
 ## 写作进度
 
@@ -56,7 +58,7 @@ Claude Code 不是普通聊天工具，
 | 1 | Claude Code 不是聊天工具，而是 Agentic Harness | 初稿完成 | 通读校准官方事实，准备发布前润色 |
 | 2 | Claude Code 的记忆不是“记住”，而是 Context 装载工程 | 初稿完成 | 通读校准来源标识和实践练习 |
 | 3 | 工具系统：Claude Code 为什么能“自己动手” | 初稿完成 | 通读校准工具行为、权限要求和实践练习 |
-| 4 | 权限、安全与 Prompt Injection：Agent 的边界在哪里 | 规划完成 | 设计 permissions、sensitive files、prompt injection 实践练习 |
+| 4 | 权限、安全与 Prompt Injection：Agent 的边界在哪里 | 初稿完成 | 通读校准安全边界、CI 权限和实践练习 |
 | 5 | Hooks 与 MCP：一个管控制，一个连接外部世界 | 规划完成 | 设计最小 hook 和最小 MCP server 实践练习 |
 | 6 | 多 Agent 架构：Subagents、Agent Teams 与 Worktrees | 规划完成 | 补决策树和 worktree / subagent 对比实践 |
 | 7 | 从个人配置到团队标准化：Skills、Plugins 与 Marketplaces | 规划完成 | 设计最小 skill、plugin 和 marketplace 实践 |
@@ -65,9 +67,10 @@ Claude Code 不是普通聊天工具，
 ## 推荐推进顺序
 
 1. 收口第 1、2、3 篇：它们已经成文，优先做发布前事实核查、术语统一和细节润色。
-2. 撰写第 4 篇：承接第 3 篇，展开权限、安全与 Prompt Injection。
-3. 补一篇轻量导读：为读者说明推荐阅读顺序和实践方式。
-4. 补安全与扩展专题：权限、hooks、MCP、多 Agent、plugins、CI/CD 按规划逐篇推进。
+2. 通读第 4 篇：重点校准 permissions、sandbox、prompt injection、MCP 和 CI 权限边界。
+3. 撰写第 5 篇：展开 hooks 与 MCP，一个讲确定性控制，一个讲外部能力连接。
+4. 补一篇轻量导读：为读者说明推荐阅读顺序和实践方式。
+5. 补扩展专题：多 Agent、plugins、CI/CD 按规划逐篇推进。
 
 ## 写作纪律
 
