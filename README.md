@@ -25,13 +25,29 @@ Claude Code 不是普通聊天工具，
 - 作者推导：基于官方事实和工程经验形成的解释。
 - 动手验证：设计成读者可以复现的实践练习；作者自测证据可内部留存，不必在正文里暴露内部记录状态。
 
+## 目录结构
+
+```text
+.
+├── README.md
+├── articles/
+│   ├── 01-Claude-Code-不是聊天工具，而是-Agentic-Harness.md
+│   ├── 02-Claude-Code-的记忆不是“记住”，而是一次-Context-装载工程.md
+│   └── 03-Claude-Code-工具系统为什么能“自己动手”.md
+└── docs/
+    ├── 00-Claude-Code-系统学习路线.md
+    ├── 00-Claude-Code-八篇文章写作规划.md
+    └── 00-Claude-Code-实践练习题库.md
+```
+
 ## 当前文件
 
-- `Claude Code 系统学习路线.md`：总纲，按学习层次拆解 Claude Code 的核心概念、context、工具、安全、扩展、多 Agent、CI/CD 和 Agent SDK。
-- `Claude Code 八篇文章写作规划.md`：系列写作蓝图，包含 8 篇文章的目标读者、核心问题、参考资料和实践练习。
-- `Claude Code 不是聊天工具，而是 Agentic Harness.md`：系列第 1 篇初稿，建立 Claude Code 作为 agentic harness / agent runtime 的总模型。
-- `Claude Code 的记忆不是“记住”，而是一次 Context 装载工程.md`：系列第 2 篇初稿，聚焦 memory、instructions、rules、skills、MCP 与 context 装载机制。
-- `实践练习.md`：读者实践题库，用于把 `/context`、`/mcp`、`/memory`、`/hooks`、`claude -p`、GitHub Actions 等验证项改写成可操作练习。
+- `docs/00-Claude-Code-系统学习路线.md`：总纲，按学习层次拆解 Claude Code 的核心概念、context、工具、安全、扩展、多 Agent、CI/CD 和 Agent SDK。
+- `docs/00-Claude-Code-八篇文章写作规划.md`：系列写作蓝图，包含 8 篇文章的目标读者、核心问题、参考资料和实践练习。
+- `docs/00-Claude-Code-实践练习题库.md`：读者实践题库，用于把 `/context`、`/mcp`、`/memory`、`/hooks`、`claude -p`、GitHub Actions 等验证项改写成可操作练习。
+- `articles/01-Claude-Code-不是聊天工具，而是-Agentic-Harness.md`：系列第 1 篇初稿，建立 Claude Code 作为 agentic harness / agent runtime 的总模型。
+- `articles/02-Claude-Code-的记忆不是“记住”，而是一次-Context-装载工程.md`：系列第 2 篇初稿，聚焦 memory、instructions、rules、skills、MCP 与 context 装载机制。
+- `articles/03-Claude-Code-工具系统为什么能“自己动手”.md`：系列第 3 篇初稿，解释工具调用结果如何动态进入 context 并推动下一步行动。
 
 ## 写作进度
 
@@ -39,7 +55,7 @@ Claude Code 不是普通聊天工具，
 | --- | --- | --- | --- |
 | 1 | Claude Code 不是聊天工具，而是 Agentic Harness | 初稿完成 | 通读校准官方事实，准备发布前润色 |
 | 2 | Claude Code 的记忆不是“记住”，而是 Context 装载工程 | 初稿完成 | 通读校准来源标识和实践练习 |
-| 3 | 工具系统：Claude Code 为什么能“自己动手” | 规划完成 | 撰写初稿，区分静态 context 与工具输出动态填充 |
+| 3 | 工具系统：Claude Code 为什么能“自己动手” | 初稿完成 | 通读校准工具行为、权限要求和实践练习 |
 | 4 | 权限、安全与 Prompt Injection：Agent 的边界在哪里 | 规划完成 | 设计 permissions、sensitive files、prompt injection 实践练习 |
 | 5 | Hooks 与 MCP：一个管控制，一个连接外部世界 | 规划完成 | 设计最小 hook 和最小 MCP server 实践练习 |
 | 6 | 多 Agent 架构：Subagents、Agent Teams 与 Worktrees | 规划完成 | 补决策树和 worktree / subagent 对比实践 |
@@ -48,8 +64,8 @@ Claude Code 不是普通聊天工具，
 
 ## 推荐推进顺序
 
-1. 收口第 1、2 篇：它们已经成文，优先做发布前事实核查、术语统一和细节润色。
-2. 撰写第 3 篇：承接第 1、2 篇，解释工具输出如何驱动 agent loop。
+1. 收口第 1、2、3 篇：它们已经成文，优先做发布前事实核查、术语统一和细节润色。
+2. 撰写第 4 篇：承接第 3 篇，展开权限、安全与 Prompt Injection。
 3. 补一篇轻量导读：为读者说明推荐阅读顺序和实践方式。
 4. 补安全与扩展专题：权限、hooks、MCP、多 Agent、plugins、CI/CD 按规划逐篇推进。
 
