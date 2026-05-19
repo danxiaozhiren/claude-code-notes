@@ -2,7 +2,7 @@
 
 > 当前定位：围绕 Claude Code 的系统学习、文章写作与读者实践资料库。  
 > 作者：wt  
-> 当前仓库快照：2026-05-18。  
+> 当前仓库快照：2026-05-19。  
 > 既有文章的官方文档核查日期以正文标注为准，复用或发布前需要重新核查。
 
 ## 项目目标
@@ -34,7 +34,8 @@ Claude Code 不是普通聊天工具，
 │   ├── 01-Claude-Code-不是聊天工具，而是-Agentic-Harness.md
 │   ├── 02-Claude-Code-的记忆不是“记住”，而是一次-Context-装载工程.md
 │   ├── 03-Claude-Code-工具系统为什么能“自己动手”.md
-│   └── 04-Claude-Code-权限、安全与-Prompt-Injection：Agent-的边界在哪里.md
+│   ├── 04-Claude-Code-权限、安全与-Prompt-Injection：Agent-的边界在哪里.md
+│   └── 05-Claude-Code-Hooks-与-MCP：一个管控制，一个连接外部世界.md
 └── docs/
     ├── 00-Claude-Code-系统学习路线.md
     ├── 00-Claude-Code-八篇文章写作规划.md
@@ -50,6 +51,7 @@ Claude Code 不是普通聊天工具，
 - `articles/02-Claude-Code-的记忆不是“记住”，而是一次-Context-装载工程.md`：系列第 2 篇初稿，聚焦 memory、instructions、rules、skills、MCP 与 context 装载机制。
 - `articles/03-Claude-Code-工具系统为什么能“自己动手”.md`：系列第 3 篇初稿，解释工具调用结果如何动态进入 context 并推动下一步行动。
 - `articles/04-Claude-Code-权限、安全与-Prompt-Injection：Agent-的边界在哪里.md`：系列第 4 篇初稿，解释 permissions、sandbox、managed settings、prompt injection、MCP 和 CI 最小权限如何共同构成 agent 边界。
+- `articles/05-Claude-Code-Hooks-与-MCP：一个管控制，一个连接外部世界.md`：系列第 5 篇初稿，解释 hooks 的确定性控制、MCP 的外部能力连接，以及 MCP + Skills + Hooks 的组合模式。
 
 ## 写作进度
 
@@ -59,7 +61,7 @@ Claude Code 不是普通聊天工具，
 | 2 | Claude Code 的记忆不是“记住”，而是 Context 装载工程 | 初稿完成 | 通读校准来源标识和实践练习 |
 | 3 | 工具系统：Claude Code 为什么能“自己动手” | 初稿完成 | 通读校准工具行为、权限要求和实践练习 |
 | 4 | 权限、安全与 Prompt Injection：Agent 的边界在哪里 | 初稿完成 | 通读校准安全边界、CI 权限和实践练习 |
-| 5 | Hooks 与 MCP：一个管控制，一个连接外部世界 | 规划完成 | 设计最小 hook 和最小 MCP server 实践练习 |
+| 5 | Hooks 与 MCP：一个管控制，一个连接外部世界 | 初稿完成 | 通读校准 hook 事件、MCP 权限和组合实践 |
 | 6 | 多 Agent 架构：Subagents、Agent Teams 与 Worktrees | 规划完成 | 补决策树和 worktree / subagent 对比实践 |
 | 7 | 从个人配置到团队标准化：Skills、Plugins 与 Marketplaces | 规划完成 | 设计最小 skill、plugin 和 marketplace 实践 |
 | 8 | 把 Claude Code 接入工程系统：GitHub Actions、Headless 与 Agent SDK | 规划完成 | 设计 `claude -p`、structured output 和 GitHub Actions 实践 |
@@ -68,9 +70,10 @@ Claude Code 不是普通聊天工具，
 
 1. 收口第 1、2、3 篇：它们已经成文，优先做发布前事实核查、术语统一和细节润色。
 2. 通读第 4 篇：重点校准 permissions、sandbox、prompt injection、MCP 和 CI 权限边界。
-3. 撰写第 5 篇：展开 hooks 与 MCP，一个讲确定性控制，一个讲外部能力连接。
-4. 补一篇轻量导读：为读者说明推荐阅读顺序和实践方式。
-5. 补扩展专题：多 Agent、plugins、CI/CD 按规划逐篇推进。
+3. 通读第 5 篇：重点校准 hooks 生命周期、MCP prompts、MCP tool search 和组合模式。
+4. 撰写第 6 篇：展开 Subagents、Agent Teams 与 Worktrees 的多 Agent 架构。
+5. 补一篇轻量导读：为读者说明推荐阅读顺序和实践方式。
+6. 补扩展专题：plugins、CI/CD 按规划逐篇推进。
 
 ## 写作纪律
 
