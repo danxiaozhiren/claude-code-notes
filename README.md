@@ -2,7 +2,7 @@
 
 > 当前定位：围绕 Claude Code 的系统学习、文章写作与读者实践资料库。  
 > 作者：wt  
-> 当前仓库快照：2026-05-19。  
+> 当前仓库快照：2026-05-20。
 > 既有文章的官方文档核查日期以正文标注为准，复用或发布前需要重新核查。
 
 ## 项目目标
@@ -36,7 +36,9 @@ Claude Code 不是普通聊天工具，
 │   ├── 03-Claude-Code-工具系统为什么能“自己动手”.md
 │   ├── 04-Claude-Code-权限、安全与-Prompt-Injection：Agent-的边界在哪里.md
 │   ├── 05-Claude-Code-Hooks-与-MCP：一个管控制，一个连接外部世界.md
-│   └── 06-Claude-Code-多-Agent-架构：Subagents、Agent-Teams-与-Worktrees.md
+│   ├── 06-Claude-Code-多-Agent-架构：Subagents、Agent-Teams-与-Worktrees.md
+│   ├── 07-Claude-Code-从个人配置到团队标准化：Skills、Plugins-与-Marketplaces.md
+│   └── 08-Claude-Code-把-Claude-Code-接入工程系统：GitHub-Actions、Headless-与-Agent-SDK.md
 └── docs/
     ├── 00-Claude-Code-系统学习路线.md
     ├── 00-Claude-Code-八篇文章写作规划.md
@@ -54,6 +56,8 @@ Claude Code 不是普通聊天工具，
 - `articles/04-Claude-Code-权限、安全与-Prompt-Injection：Agent-的边界在哪里.md`：系列第 4 篇初稿，解释 permissions、sandbox、managed settings、prompt injection、MCP 和 CI 最小权限如何共同构成 agent 边界。
 - `articles/05-Claude-Code-Hooks-与-MCP：一个管控制，一个连接外部世界.md`：系列第 5 篇初稿，解释 hooks 的确定性控制、MCP 的外部能力连接，以及 MCP + Skills + Hooks 的组合模式。
 - `articles/06-Claude-Code-多-Agent-架构：Subagents、Agent-Teams-与-Worktrees.md`：系列第 6 篇初稿，解释 subagents、Agent Teams 与 worktrees 如何分别处理 context 隔离、协作协调和文件系统隔离。
+- `articles/07-Claude-Code-从个人配置到团队标准化：Skills、Plugins-与-Marketplaces.md`：系列第 7 篇初稿，解释 skills、plugins 和 marketplaces 如何把个人经验升级为可复用、可分发、可治理的团队标准。
+- `articles/08-Claude-Code-把-Claude-Code-接入工程系统：GitHub-Actions、Headless-与-Agent-SDK.md`：系列第 8 篇初稿，解释 GitHub Actions、headless 和 Agent SDK 如何把 Claude Code 接入 PR、CI、脚本和自定义应用。
 
 ## 写作进度
 
@@ -65,8 +69,8 @@ Claude Code 不是普通聊天工具，
 | 4 | 权限、安全与 Prompt Injection：Agent 的边界在哪里 | 初稿完成 | 通读校准安全边界、CI 权限和实践练习 |
 | 5 | Hooks 与 MCP：一个管控制，一个连接外部世界 | 初稿完成 | 通读校准 hook 事件、MCP 权限和组合实践 |
 | 6 | 多 Agent 架构：Subagents、Agent Teams 与 Worktrees | 初稿完成 | 通读校准 Agent Teams experimental 标注、worktree 隔离和实践练习 |
-| 7 | 从个人配置到团队标准化：Skills、Plugins 与 Marketplaces | 规划完成 | 设计最小 skill、plugin 和 marketplace 实践 |
-| 8 | 把 Claude Code 接入工程系统：GitHub Actions、Headless 与 Agent SDK | 规划完成 | 设计 `claude -p`、structured output 和 GitHub Actions 实践 |
+| 7 | 从个人配置到团队标准化：Skills、Plugins 与 Marketplaces | 初稿完成 | 通读校准 skill 生命周期、plugin 结构和 marketplace 治理 |
+| 8 | 把 Claude Code 接入工程系统：GitHub Actions、Headless 与 Agent SDK | 初稿完成 | 通读校准 GitHub Actions、headless、Agent SDK 和 observability |
 
 ## 推荐推进顺序
 
@@ -74,9 +78,9 @@ Claude Code 不是普通聊天工具，
 2. 通读第 4 篇：重点校准 permissions、sandbox、prompt injection、MCP 和 CI 权限边界。
 3. 通读第 5 篇：重点校准 hooks 生命周期、MCP prompts、MCP tool search 和组合模式。
 4. 通读第 6 篇：重点校准 subagent context、Agent Teams 协作机制和 worktree 文件隔离。
-5. 撰写第 7 篇：展开 Skills、Plugins 与 Marketplaces 的团队标准化分发。
-6. 补一篇轻量导读：为读者说明推荐阅读顺序和实践方式。
-7. 补 CI/CD 与 Agent SDK 专题。
+5. 通读第 7 篇：重点校准 skill 生命周期、plugin namespace、marketplace version 和 managed restrictions。
+6. 通读第 8 篇：重点校准 GitHub Actions、headless、Agent SDK、structured output 和 observability。
+7. 补一篇轻量导读：为读者说明推荐阅读顺序和实践方式。
 
 ## 写作纪律
 
