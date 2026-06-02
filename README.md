@@ -1,100 +1,116 @@
-# Claude Code Notes
+# AI Agent 底层原理学习库
 
-> 当前定位：围绕 Claude Code 的系统学习、文章写作与读者实践资料库。  
+> 当前定位：个人 AI Agent / Claude Code 底层原理学习、技术文章写作与实践验证资料库。  
 > 作者：wt  
-> 当前仓库快照：2026-05-20。
-> 既有文章的官方文档核查日期以正文标注为准，复用或发布前需要重新核查。
+> 当前仓库快照：2026-06-02。  
+> 旧 Claude Code 官方能力系列的文档核查日期以正文标注为准，复用或发布前需要重新核查。
 
 ## 项目目标
 
-这个仓库用于把 Claude Code 的系统学习沉淀成一组可发布、可复核、可迭代的中文文章。
+这个仓库用于沉淀个人对 AI Agent 底层原理的系统学习，不再只围绕单一文章系列组织，而是按“学习方向”长期扩展。
 
-写作初衷：在领导的鼓励与倡导下，围绕 Claude Code 做一次面向底层原理的系统学习，把学习过程中的理解、积累和实践经验沉淀下来，并以文章形式分享给更多同事和读者。
-
-核心主线是：
+当前主线是：
 
 ```text
-Claude Code 不是普通聊天工具，
-而是围绕 Claude 模型构建的 agentic harness / agent runtime。
+AI Agent 不是单个 prompt，
+而是模型、工具、上下文、权限、记忆、调度和外部能力共同组成的 harness / runtime。
 ```
+
+后续新增方向时，优先新增 `tracks/<topic>/`，不要重新搬动顶层目录。
+
+## 资料边界
 
 写作时优先把每个结论落到四类来源之一：
 
-- 官方事实：来自 `code.claude.com/docs` 或 Anthropic 官方仓库。
-- 社区实践：来自可信社区仓库或可复现案例。
-- 作者推导：基于官方事实和工程经验形成的解释。
-- 动手验证：设计成读者可以复现的实践练习；作者自测证据可内部留存，不必在正文里暴露内部记录状态。
+| 类型 | 说明 |
+| --- | --- |
+| 官方事实 | 来自官方文档、官方仓库或官方公开材料 |
+| 社区教学实现 | 来自可信社区教学项目、开源 demo 或可运行样本 |
+| 作者推导 | 基于官方事实、社区实现和工程经验形成的解释 |
+| 动手观察 | 读者可以复现实验获得的现象 |
+
+不要把社区教学实现写成官方内部实现，不要把旧版本行为直接写成当前事实。
 
 ## 目录结构
 
 ```text
 .
 ├── README.md
-├── articles/
-│   ├── 01-Claude-Code-不是聊天工具，而是-Agentic-Harness.md
-│   ├── 02-Claude-Code-的记忆不是“记住”，而是一次-Context-装载工程.md
-│   ├── 03-Claude-Code-工具系统为什么能“自己动手”.md
-│   ├── 04-Claude-Code-权限、安全与-Prompt-Injection：Agent-的边界在哪里.md
-│   ├── 05-Claude-Code-Hooks-与-MCP：一个管控制，一个连接外部世界.md
-│   ├── 06-Claude-Code-多-Agent-架构：Subagents、Agent-Teams-与-Worktrees.md
-│   ├── 07-Claude-Code-从个人配置到团队标准化：Skills、Plugins-与-Marketplaces.md
-│   └── 08-Claude-Code-把-Claude-Code-接入工程系统：GitHub-Actions、Headless-与-Agent-SDK.md
-└── docs/
-    ├── 00-Claude-Code-系统学习路线.md
-    ├── 00-Claude-Code-八篇文章写作规划.md
-    └── 00-Claude-Code-实践练习题库.md
+├── tracks/
+│   ├── README.md
+│   ├── claude-code-public-mechanisms/
+│   │   ├── README.md
+│   │   └── 01-...08-*.md
+│   └── agent-harness-engineering/
+│       ├── README.md
+│       └── 01-*.md
+├── labs/
+│   ├── README.md
+│   └── claude-code/
+│       ├── README.md
+│       └── 00-Claude-Code-实践练习题库.md
+├── meta/
+│   ├── README.md
+│   └── claude-code-public-mechanisms/
+│       ├── 00-Claude-Code-系统学习路线.md
+│       └── 00-Claude-Code-八篇文章写作规划.md
+└── references/
+    └── README.md
 ```
 
-## 当前文件
+## 当前学习方向
 
-- `docs/00-Claude-Code-系统学习路线.md`：总纲，按学习层次拆解 Claude Code 的核心概念、context、工具、安全、扩展、多 Agent、CI/CD 和 Agent SDK。
-- `docs/00-Claude-Code-八篇文章写作规划.md`：系列写作蓝图，包含 8 篇文章的目标读者、核心问题、参考资料和实践练习。
-- `docs/00-Claude-Code-实践练习题库.md`：读者实践题库，用于把 `/context`、`/mcp`、`/memory`、`/hooks`、`claude -p`、GitHub Actions 等验证项改写成可操作练习。
-- `articles/01-Claude-Code-不是聊天工具，而是-Agentic-Harness.md`：系列第 1 篇初稿，建立 Claude Code 作为 agentic harness / agent runtime 的总模型。
-- `articles/02-Claude-Code-的记忆不是“记住”，而是一次-Context-装载工程.md`：系列第 2 篇初稿，聚焦 memory、instructions、rules、skills、MCP 与 context 装载机制。
-- `articles/03-Claude-Code-工具系统为什么能“自己动手”.md`：系列第 3 篇初稿，解释工具调用结果如何动态进入 context 并推动下一步行动。
-- `articles/04-Claude-Code-权限、安全与-Prompt-Injection：Agent-的边界在哪里.md`：系列第 4 篇初稿，解释 permissions、sandbox、managed settings、prompt injection、MCP 和 CI 最小权限如何共同构成 agent 边界。
-- `articles/05-Claude-Code-Hooks-与-MCP：一个管控制，一个连接外部世界.md`：系列第 5 篇初稿，解释 hooks 的确定性控制、MCP 的外部能力连接，以及 MCP + Skills + Hooks 的组合模式。
-- `articles/06-Claude-Code-多-Agent-架构：Subagents、Agent-Teams-与-Worktrees.md`：系列第 6 篇初稿，解释 subagents、Agent Teams 与 worktrees 如何分别处理 context 隔离、协作协调和文件系统隔离。
-- `articles/07-Claude-Code-从个人配置到团队标准化：Skills、Plugins-与-Marketplaces.md`：系列第 7 篇初稿，解释 skills、plugins 和 marketplaces 如何把个人经验升级为可复用、可分发、可治理的团队标准。
-- `articles/08-Claude-Code-把-Claude-Code-接入工程系统：GitHub-Actions、Headless-与-Agent-SDK.md`：系列第 8 篇初稿，解释 GitHub Actions、headless 和 Agent SDK 如何把 Claude Code 接入 PR、CI、脚本和自定义应用。
+| Track | 定位 | 当前状态 |
+| --- | --- | --- |
+| `tracks/claude-code-public-mechanisms/` | 基于 Claude Code 官方公开能力，理解产品机制、使用边界和工程化实践 | 8 篇初稿已完成 |
+| `tracks/agent-harness-engineering/` | 基于 `shareAI-lab/learn-claude-code` 社区教学项目，理解 Claude Code-like Agent Harness 通用工程机制 | 第 1 篇已完成 |
 
-## 写作进度
+## 推荐阅读顺序
 
-| 编号 | 文章 | 状态 | 下一步 |
-| --- | --- | --- | --- |
-| 1 | Claude Code 不是聊天工具，而是 Agentic Harness | 初稿完成 | 通读校准官方事实，准备发布前润色 |
-| 2 | Claude Code 的记忆不是“记住”，而是 Context 装载工程 | 初稿完成 | 通读校准来源标识和实践练习 |
-| 3 | 工具系统：Claude Code 为什么能“自己动手” | 初稿完成 | 通读校准工具行为、权限要求和实践练习 |
-| 4 | 权限、安全与 Prompt Injection：Agent 的边界在哪里 | 初稿完成 | 通读校准安全边界、CI 权限和实践练习 |
-| 5 | Hooks 与 MCP：一个管控制，一个连接外部世界 | 初稿完成 | 通读校准 hook 事件、MCP 权限和组合实践 |
-| 6 | 多 Agent 架构：Subagents、Agent Teams 与 Worktrees | 初稿完成 | 通读校准 Agent Teams experimental 标注、worktree 隔离和实践练习 |
-| 7 | 从个人配置到团队标准化：Skills、Plugins 与 Marketplaces | 初稿完成 | 通读校准 skill 生命周期、plugin 结构和 marketplace 治理 |
-| 8 | 把 Claude Code 接入工程系统：GitHub Actions、Headless 与 Agent SDK | 初稿完成 | 通读校准 GitHub Actions、headless、Agent SDK 和 observability |
+1. 先读 `tracks/claude-code-public-mechanisms/`：建立 Claude Code 作为 agentic harness 的公开能力地图。
+2. 再读 `tracks/agent-harness-engineering/`：用社区教学代码理解 agent loop、工具、权限、hooks、context、团队协作和 MCP 如何组合。
+3. 配合 `labs/` 做实践练习，把机制理解落到可观察现象。
+4. 用 `meta/` 里的规划文档复盘写作纪律、资料优先级和旧系列设计取舍。
 
-## 推荐推进顺序
+## 新增学习方向规范
 
-1. 收口第 1、2、3 篇：它们已经成文，优先做发布前事实核查、术语统一和细节润色。
-2. 通读第 4 篇：重点校准 permissions、sandbox、prompt injection、MCP 和 CI 权限边界。
-3. 通读第 5 篇：重点校准 hooks 生命周期、MCP prompts、MCP tool search 和组合模式。
-4. 通读第 6 篇：重点校准 subagent context、Agent Teams 协作机制和 worktree 文件隔离。
-5. 通读第 7 篇：重点校准 skill 生命周期、plugin namespace、marketplace version 和 managed restrictions。
-6. 通读第 8 篇：重点校准 GitHub Actions、headless、Agent SDK、structured output 和 observability。
-7. 补一篇轻量导读：为读者说明推荐阅读顺序和实践方式。
+新增方向时使用这个结构：
+
+```text
+tracks/<topic-slug>/
+├── README.md
+├── 01-*.md
+├── 02-*.md
+└── ...
+```
+
+每个 track 的 `README.md` 至少说明：
+
+- 学习对象
+- 资料来源边界
+- 文章列表
+- 推荐阅读顺序
+- 和其他 track 的关系
+
+如果需要实验材料，放到：
+
+```text
+labs/<topic-slug>/
+```
+
+如果需要资料索引、术语表或来源政策，放到：
+
+```text
+references/
+```
 
 ## 写作纪律
 
-- 每篇文章头部必须标注文档核查日期。
+- 每篇文章头部必须标注核查日期。
 - experimental、preview、research preview、beta 功能首次出现时必须标注状态。
 - 不把社区经验包装成官方结论。
 - 不把旧版本行为直接当作当前事实。
 - 不把模型行为经验描述成强保证。
-- 正文面向读者时优先写“实践练习”“动手验证”，不要暴露作者内部待办状态。
+- 机制解释必须说明“为什么这样设计”，不能只复述 README 或文档。
+- 实践练习按 `输入 / 预期观察 / 验证标准` 组织。
 
-## 发布前检查
-
-- 官方链接仍然有效，且关键结论已按最新文档校准。
-- 每个实践练习都按 `输入 / 预期观察 / 验证标准` 组织。
-- 易错点里明确区分官方事实、社区实践、作者推导和实践观察。
-- 文章末尾有“实践练习”或“动手验证”，而不是作者式的“实测结果摘要”。
-- 没有未标注的 preview / experimental 功能。
