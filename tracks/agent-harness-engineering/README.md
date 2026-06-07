@@ -1,8 +1,8 @@
 # Agent Harness 工程学习系列
 
-> 社区项目核查日期：2026-05-31  
-> 写作仓库：`danxiaozhiren/claude-code-notes`  
-> 学习对象：`shareAI-lab/learn-claude-code`  
+> 社区项目核查日期：2026-06-05
+> 写作仓库：`danxiaozhiren/claude-code-notes`
+> 学习对象：`shareAI-lab/learn-claude-code`
 > 系列定位：通过 `learn-claude-code` 社区教学代码理解 Claude Code-like Agent Harness 的通用工程机制。
 
 ## 边界说明
@@ -23,7 +23,7 @@
 | 编号 | 文章 | 对应章节 | 核心问题 |
 | --- | --- | --- | --- |
 | 1 | [从最小 Agent Loop 开始：Claude Code-like Harness 的骨架](01-从最小-Agent-Loop-开始：Claude-Code-like-Harness-的骨架.md) | s01、s02、s20 | 一个模型如何变成能持续行动的 agent？ |
-| 2 | 工具系统：模型为什么能从“说”变成“做” | s02、s19、s20 | 为什么新增工具不应该改主循环？ |
+| 2 | [工具系统：模型为什么能从“说”变成“做”](02-工具系统：模型为什么能从说变成做.md) | s02、s19、s20 | 为什么新增工具不应该改主循环？ |
 | 3 | 权限系统：Agent 自主行动前必须有边界 | s03、s15、s18、s19 | Agent 的行动边界在哪里生效？ |
 | 4 | Hooks：把确定性控制挂到 Agent Loop 外面 | s04、s20 | 哪些控制不该写进提示词？ |
 | 5 | 上下文工程：Todo、Skill、Compact、Memory 怎么协同 | s05、s07、s08、s09、s10 | 多个 context 机制分别解决什么问题？ |
