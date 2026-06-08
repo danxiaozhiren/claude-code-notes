@@ -25,7 +25,7 @@
 | 1 | [从最小 Agent Loop 开始：Claude Code-like Harness 的骨架](01-从最小-Agent-Loop-开始：Claude-Code-like-Harness-的骨架.md) | s01、s02、s20 | 一个模型如何变成能持续行动的 agent？ |
 | 2 | [工具系统：模型为什么能从“说”变成“做”](02-工具系统：模型为什么能从说变成做.md) | s02、s19、s20 | 为什么新增工具不应该改主循环？ |
 | 3 | [权限系统：Agent 自主行动前必须有边界](03-权限系统：Agent-自主行动前必须有边界.md) | s03、s15、s18、s19 | Agent 的行动边界在哪里生效？ |
-| 4 | Hooks：把确定性控制挂到 Agent Loop 外面 | s04、s20 | 哪些控制不该写进提示词？ |
+| 4 | [Hooks：把确定性控制挂到 Agent Loop 外面](04-Hooks：把确定性控制挂到-Agent-Loop-外面.md) | s04、s20 | 哪些控制不该写进提示词？ |
 | 5 | 上下文工程：Todo、Skill、Compact、Memory 怎么协同 | s05、s07、s08、s09、s10 | 多个 context 机制分别解决什么问题？ |
 | 6 | 失败恢复与长任务：Agent 如何不中途崩掉 | s11、s12、s13、s14 | 长任务为什么不能只靠一次会话硬撑？ |
 | 7 | 多 Agent 协作：Subagent、Mailbox、Team Protocol、Worktree | s06、s12、s15、s16、s17、s18 | 多 agent 协作靠什么避免互相污染？ |
