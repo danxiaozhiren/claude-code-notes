@@ -43,7 +43,7 @@ AI Agent 不是单个 prompt，
 │   │   └── 01-...08-*.md
 │   └── agent-harness-engineering/
 │       ├── README.md
-│       └── 01-*.md
+│       └── 01-...06-*.md
 ├── labs/
 │   ├── README.md
 │   └── claude-code/
@@ -63,7 +63,7 @@ AI Agent 不是单个 prompt，
 | Track | 定位 | 当前状态 |
 | --- | --- | --- |
 | `tracks/claude-code-public-mechanisms/` | 基于 Claude Code 官方公开能力，理解产品机制、使用边界和工程化实践 | 8 篇初稿已完成 |
-| `tracks/agent-harness-engineering/` | 基于 `shareAI-lab/learn-claude-code` 社区教学项目，理解 Claude Code-like Agent Harness 通用工程机制 | 第 1 篇已完成 |
+| `tracks/agent-harness-engineering/` | 基于 `shareAI-lab/learn-claude-code` 社区教学项目，理解 Claude Code-like Agent Harness 通用工程机制 | 第 1-6 篇初稿已完成 |
 
 ## 推荐阅读顺序
 
@@ -113,4 +113,3 @@ references/
 - 不把模型行为经验描述成强保证。
 - 机制解释必须说明“为什么这样设计”，不能只复述 README 或文档。
 - 实践练习按 `输入 / 预期观察 / 验证标准` 组织。
-
