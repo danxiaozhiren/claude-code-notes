@@ -1,6 +1,6 @@
 # Agent Harness 工程学习系列
 
-> 社区项目核查日期：2026-06-09
+> 社区项目核查日期：2026-06-10
 > 写作仓库：`danxiaozhiren/claude-code-notes`
 > 学习对象：`shareAI-lab/learn-claude-code`
 > 系列定位：通过 `learn-claude-code` 社区教学代码理解 Claude Code-like Agent Harness 的通用工程机制。
@@ -29,7 +29,7 @@
 | 5 | [上下文工程：Todo、Skill、Compact、Memory 怎么协同](05-上下文工程：Todo、Skill、Compact、Memory-怎么协同.md) | s05、s07、s08、s09、s10 | 多个 context 机制分别解决什么问题？ |
 | 6 | [失败恢复与长任务：Agent 如何不中途崩掉](06-失败恢复与长任务：Agent-如何不中途崩掉.md) | s11、s12、s13、s14 | 长任务为什么不能只靠一次会话硬撑？ |
 | 7 | [多 Agent 协作：Subagent、Mailbox、Team Protocol、Worktree](07-多-Agent-协作：Subagent、Mailbox、Team-Protocol、Worktree.md) | s06、s12、s15、s16、s17、s18 | 多 agent 协作靠什么避免互相污染？ |
-| 8 | MCP 与完整 Harness：把外部能力接进同一个工具池 | s19、s20 | 外部能力如何接进同一个 harness？ |
+| 8 | [MCP 与完整 Harness：把外部能力接进同一个工具池](08-MCP-与完整-Harness：把外部能力接进同一个工具池.md) | s19、s20 | 外部能力如何接进同一个 harness？ |
 
 ## 写作纪律
 
