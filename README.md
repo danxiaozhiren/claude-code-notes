@@ -46,9 +46,12 @@ AI Agent 不是单个 prompt，
 │       └── 01-...08-*.md
 ├── labs/
 │   ├── README.md
-│   └── claude-code/
+│   ├── claude-code/
+│   │   ├── README.md
+│   │   └── 00-Claude-Code-实践练习题库.md
+│   └── agent-harness-engineering/
 │       ├── README.md
-│       └── 00-Claude-Code-实践练习题库.md
+│       └── 00-Agent-Harness-实验手册.md
 ├── meta/
 │   ├── README.md
 │   └── claude-code-public-mechanisms/
