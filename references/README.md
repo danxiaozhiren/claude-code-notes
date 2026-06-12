@@ -2,6 +2,14 @@
 
 `references/` 用来放跨 track 复用的资料索引、术语表和来源政策。
 
+## 当前文件
+
+| 文件 | 用途 |
+| --- | --- |
+| [Agent Harness 术语表](agent-harness-glossary.md) | 统一本仓库关于 Agent Loop、Tool Runtime、Context Plane、Control Plane、MCP、多 Agent 等概念的用词 |
+
+## 来源类型
+
 当前主要来源类型：
 
 | 类型 | 示例 | 写作要求 |
@@ -11,4 +19,3 @@
 | 可复现实验 | 本地命令输出、截图、最小 demo | 写成动手观察，不写成普遍保证 |
 
 后续如果新增 MCP、OpenAI Agents、LangGraph、SWE-agent 等学习方向，可以在这里补充统一资料索引。
-
