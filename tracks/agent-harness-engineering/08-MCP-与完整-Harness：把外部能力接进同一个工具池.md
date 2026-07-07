@@ -1,7 +1,7 @@
 # MCP 与完整 Harness：把外部能力接进同一个工具池
 
 > 社区项目核查日期：2026-06-10
-> 官方文档核查日期：2026-06-10
+> 官方文档核查日期：2026-07-07
 > 作者：wt
 > 适合读者：个人开发者、团队技术负责人、想理解 Agent Harness 外部能力接入与完整运行时组合的工程师
 > 本文定位：`learn-claude-code` 学习系列第 8 篇，也是本系列收束篇。本文承接第 7 篇多 Agent 协作，解释 MCP 工具如何进入同一个工具池，以及完整 Agent Harness 为什么不是一个“大循环”，而是一组边界清晰的运行时组件。
@@ -702,11 +702,25 @@ while session_active:
 harness 负责权限、执行、状态、恢复、回填和扩展。
 ```
 
+一个 mock MCP server 的最小运行记录可以这样整理：
+
+| 步骤 | 输入 | 可观察输出 | 机制结论 |
+| --- | --- | --- | --- |
+| 连接 server | `connect_mcp("docs")` | 返回 `docs.search` 等工具定义 | 连接阶段先发现能力，不直接执行业务 |
+| 规范化命名 | `docs.search` | `mcp__docs__search` | namespace 让路由和权限可控 |
+| 合并工具池 | builtin + MCP tools | 下一轮 `tools` 增加 MCP schema | 外部能力进入同一 tool pool |
+| 调用工具 | `mcp__docs__search(query)` | MCP handler 返回搜索结果 | 外部工具仍走 handler |
+| 回填结果 | handler output | `tool_result` 进入 messages | 模型只能基于回填后的 observation 继续 |
+
+这个记录比“连上 MCP 了”更有价值，因为它能证明 MCP 没有绕开 harness 的统一协议面。
+
 ---
 
 ## 十三、动手实验
 
 以下实验建议在临时目录中完成。如果你本地没有 `learn-claude-code`，先 clone 到临时目录；不要把实验输出写进本文所在写作仓库。
+
+本节实验对应实验手册编号：AHE-015、AHE-016。
 
 ### 实验 1：观察 s19 的 MCP 工具发现
 

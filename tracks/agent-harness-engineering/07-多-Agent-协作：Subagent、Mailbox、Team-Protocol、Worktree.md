@@ -1,7 +1,7 @@
 # 多 Agent 协作：Subagent、Mailbox、Team Protocol、Worktree
 
 > 社区项目核查日期：2026-06-09
-> 官方文档核查日期：2026-06-09
+> 官方文档核查日期：2026-07-07
 > 作者：wt
 > 适合读者：个人开发者、团队技术负责人、想理解 Agent Harness 多 Agent 协作机制的工程师
 > 本文定位：`learn-claude-code` 学习系列第 7 篇，承接第 6 篇失败恢复与长任务，解释 Subagent、Task board、Mailbox、Team Protocol、Autonomous Agent、Worktree Isolation 如何一起支撑多 Agent 协作。
@@ -684,11 +684,26 @@ lead.synthesizes_results()
 而是所有行动都围绕 task、mailbox、protocol、worktree 这些共享边界发生。
 ```
 
+Lead 和 teammate 的最小时序可以写成：
+
+| 顺序 | Lead | Teammate | 共享边界 |
+| --- | --- | --- | --- |
+| 1 | 拆任务、写 task board | 空闲等待 | `.tasks/` |
+| 2 | spawn teammate | 启动独立上下文 | agent identity / tools |
+| 3 | 发送请求或审批规则 | 读取 inbox | `.mailboxes/` |
+| 4 | 等待 plan 或结果 | claim task / submit plan | `request_id` / `owner` |
+| 5 | approve / reject / ask changes | 根据响应继续或停止 | Team Protocol |
+| 6 | 汇总结果 | 在 worktree 中产出改动 | `Task.worktree` |
+
+这张时序表说明：多 Agent 协作的核心不是“多开几个模型”，而是用任务、消息、协议和文件隔离把并行行动约束在可复盘的边界内。
+
 ---
 
 ## 十二、动手实验
 
 以下实验建议在临时目录中完成。如果你本地没有 `learn-claude-code`，先 clone 到临时目录；不要把实验输出写进本文所在写作仓库。
+
+本节实验对应实验手册编号：AHE-012、AHE-013、AHE-014。
 
 ### 实验 1：观察 s06 的 context isolation
 

@@ -1,7 +1,7 @@
 # 失败恢复与长任务：Agent 如何不中途崩掉
 
 > 社区项目核查日期：2026-06-09
-> 官方文档核查日期：2026-06-09
+> 官方文档核查日期：2026-07-07
 > 作者：wt
 > 适合读者：个人开发者、团队技术负责人、想理解 Agent Harness 稳定性机制的工程师
 > 本文定位：`learn-claude-code` 学习系列第 6 篇，承接第 5 篇上下文工程，解释错误恢复、任务系统、后台任务和定时调度如何支撑长任务。
@@ -580,11 +580,25 @@ while True:
 下一轮重新装配上下文
 ```
 
+恢复状态机可以压缩成：
+
+| 事件 | 首选处理 | 状态变化 | 退出条件 |
+| --- | --- | --- | --- |
+| 临时网络/API 错误 | retry / backoff | 增加 retry 次数 | 达到上限后返回失败 observation |
+| `max_tokens` | 提高输出预算或 continuation | 记录 continuation 次数 | 模型补完或达到续写上限 |
+| prompt too long | reactive compact | 生成压缩后 messages | 压缩后重试成功或仍失败 |
+| 后台任务完成 | 注入 notification | task 从 running 到 done/failed | 下一轮模型看到结果 |
+| cron 命中 | 入队 scheduled prompt | job fired / rescheduled | 事件回到正常 loop |
+
+这张表的重点是：恢复不是“再试一次”，而是根据失败类型改变输入、预算、状态或调度入口。
+
 ---
 
 ## 十、动手实验
 
 以下实验建议在临时目录中完成。如果你本地没有 `learn-claude-code`，先 clone 到临时目录；不要把实验输出写进本文所在写作仓库。
+
+本节实验对应实验手册编号：AHE-006、AHE-008、AHE-009、AHE-010、AHE-011。
 
 ### 实验 1：观察 s11 的恢复路径
 
