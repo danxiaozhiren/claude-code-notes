@@ -6,6 +6,7 @@
 > 适合读者：个人开发者、团队技术负责人、想理解 Agent Harness 上下文管理的工程师
 > 本文定位：`learn-claude-code` 学习系列第 5 篇，承接第 4 篇 Hooks，解释 Todo、Skill、Compact、Memory、System Prompt 这些机制如何一起管理 agent 的工作上下文。
 > 实践建议：本文的实验会生成 `.memory/`、`.transcripts/`、`.task_outputs/` 等目录，建议在临时目录运行教学代码。
+> 配套实验：[AHE-006、AHE-007、AHE-008](../../labs/agent-harness-engineering/00-Agent-Harness-实验手册.md)。
 
 ---
 

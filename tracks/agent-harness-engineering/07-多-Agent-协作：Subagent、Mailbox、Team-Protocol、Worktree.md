@@ -6,6 +6,7 @@
 > 适合读者：个人开发者、团队技术负责人、想理解 Agent Harness 多 Agent 协作机制的工程师
 > 本文定位：`learn-claude-code` 学习系列第 7 篇，承接第 6 篇失败恢复与长任务，解释 Subagent、Task board、Mailbox、Team Protocol、Autonomous Agent、Worktree Isolation 如何一起支撑多 Agent 协作。
 > 实践建议：本文涉及多线程队友、文件收件箱、任务自动认领和 git worktree。实验建议放在临时 clone 或一次性测试仓库中，不要在真实项目主工作区直接跑 worktree 删除、分支删除或写文件实验。
+> 配套实验：[AHE-012、AHE-013、AHE-014](../../labs/agent-harness-engineering/00-Agent-Harness-实验手册.md)。
 
 ---
 

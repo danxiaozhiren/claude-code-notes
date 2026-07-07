@@ -15,4 +15,4 @@
 | 目录 | 说明 |
 | --- | --- |
 | `claude-code-public-mechanisms/` | 旧 8 篇 Claude Code 官方公开能力系列的学习路线和写作规划 |
-
+| `agent-harness-engineering/` | Agent Harness 工程学习系列的收尾审计、深度打磨计划和后续修改建议 |

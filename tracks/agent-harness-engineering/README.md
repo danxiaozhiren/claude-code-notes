@@ -4,7 +4,7 @@
 > 写作仓库：`danxiaozhiren/claude-code-notes`
 > 学习对象：`shareAI-lab/learn-claude-code`
 > 系列定位：通过 `learn-claude-code` 社区教学代码理解 Claude Code-like Agent Harness 的通用工程机制。
-> 当前状态：8 篇初稿已完成，进入统一索引、术语和实验路线整理阶段。
+> 当前状态：8 篇初稿已完成，已补统一索引、术语表、实验手册和收尾审计报告。
 
 ## 边界说明
 
@@ -64,16 +64,16 @@
 
 ## 系列文章
 
-| 编号 | 文章 | 对应章节 | 核心问题 |
-| --- | --- | --- | --- |
-| 1 | [从最小 Agent Loop 开始：Claude Code-like Harness 的骨架](01-从最小-Agent-Loop-开始：Claude-Code-like-Harness-的骨架.md) | s01、s02、s20 | 一个模型如何变成能持续行动的 agent？ |
-| 2 | [工具系统：模型为什么能从“说”变成“做”](02-工具系统：模型为什么能从说变成做.md) | s02、s19、s20 | 为什么新增工具不应该改主循环？ |
-| 3 | [权限系统：Agent 自主行动前必须有边界](03-权限系统：Agent-自主行动前必须有边界.md) | s03、s15、s18、s19 | Agent 的行动边界在哪里生效？ |
-| 4 | [Hooks：把确定性控制挂到 Agent Loop 外面](04-Hooks：把确定性控制挂到-Agent-Loop-外面.md) | s04、s20 | 哪些控制不该写进提示词？ |
-| 5 | [上下文工程：Todo、Skill、Compact、Memory 怎么协同](05-上下文工程：Todo、Skill、Compact、Memory-怎么协同.md) | s05、s07、s08、s09、s10 | 多个 context 机制分别解决什么问题？ |
-| 6 | [失败恢复与长任务：Agent 如何不中途崩掉](06-失败恢复与长任务：Agent-如何不中途崩掉.md) | s11、s12、s13、s14 | 长任务为什么不能只靠一次会话硬撑？ |
-| 7 | [多 Agent 协作：Subagent、Mailbox、Team Protocol、Worktree](07-多-Agent-协作：Subagent、Mailbox、Team-Protocol、Worktree.md) | s06、s12、s15、s16、s17、s18 | 多 agent 协作靠什么避免互相污染？ |
-| 8 | [MCP 与完整 Harness：把外部能力接进同一个工具池](08-MCP-与完整-Harness：把外部能力接进同一个工具池.md) | s19、s20 | 外部能力如何接进同一个 harness？ |
+| 编号 | 文章 | 对应章节 | 配套实验 | 核心问题 |
+| --- | --- | --- | --- | --- |
+| 1 | [从最小 Agent Loop 开始：Claude Code-like Harness 的骨架](01-从最小-Agent-Loop-开始：Claude-Code-like-Harness-的骨架.md) | s01、s02、s20 | AHE-001、AHE-002 | 一个模型如何变成能持续行动的 agent？ |
+| 2 | [工具系统：模型为什么能从“说”变成“做”](02-工具系统：模型为什么能从说变成做.md) | s02、s19、s20 | AHE-002、AHE-003 | 为什么新增工具不应该改主循环？ |
+| 3 | [权限系统：Agent 自主行动前必须有边界](03-权限系统：Agent-自主行动前必须有边界.md) | s03、s15、s18、s19 | AHE-004、AHE-016 | Agent 的行动边界在哪里生效？ |
+| 4 | [Hooks：把确定性控制挂到 Agent Loop 外面](04-Hooks：把确定性控制挂到-Agent-Loop-外面.md) | s04、s20 | AHE-005、AHE-016 | 哪些控制不该写进提示词？ |
+| 5 | [上下文工程：Todo、Skill、Compact、Memory 怎么协同](05-上下文工程：Todo、Skill、Compact、Memory-怎么协同.md) | s05、s07、s08、s09、s10 | AHE-006、AHE-007、AHE-008 | 多个 context 机制分别解决什么问题？ |
+| 6 | [失败恢复与长任务：Agent 如何不中途崩掉](06-失败恢复与长任务：Agent-如何不中途崩掉.md) | s11、s12、s13、s14 | AHE-006、AHE-008、AHE-009、AHE-010、AHE-011 | 长任务为什么不能只靠一次会话硬撑？ |
+| 7 | [多 Agent 协作：Subagent、Mailbox、Team Protocol、Worktree](07-多-Agent-协作：Subagent、Mailbox、Team-Protocol、Worktree.md) | s06、s12、s15、s16、s17、s18 | AHE-012、AHE-013、AHE-014 | 多 agent 协作靠什么避免互相污染？ |
+| 8 | [MCP 与完整 Harness：把外部能力接进同一个工具池](08-MCP-与完整-Harness：把外部能力接进同一个工具池.md) | s19、s20 | AHE-015、AHE-016 | 外部能力如何接进同一个 harness？ |
 
 ## 实验路线
 

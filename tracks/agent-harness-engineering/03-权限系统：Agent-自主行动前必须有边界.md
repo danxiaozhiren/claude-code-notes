@@ -6,6 +6,7 @@
 > 适合读者：个人开发者、团队技术负责人、想理解 Agent Harness 安全边界的工程师
 > 本文定位：`learn-claude-code` 学习系列第 3 篇，承接第 2 篇的工具系统，解释工具真正执行前为什么必须经过 runtime 权限管线。
 > 实践建议：权限实验必须放在临时目录；不要在重要仓库里测试删除、覆盖、权限变更、部署触发等动作。
+> 配套实验：[AHE-004、AHE-016](../../labs/agent-harness-engineering/00-Agent-Harness-实验手册.md)。
 
 ---
 

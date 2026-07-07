@@ -6,6 +6,7 @@
 > 适合读者：个人开发者、团队技术负责人、想理解 Agent Harness 扩展点的工程师
 > 本文定位：`learn-claude-code` 学习系列第 4 篇，承接第 3 篇的权限系统，解释为什么日志、权限、审计、后处理等确定性控制应该挂到 hook 点上，而不是继续塞进 agent loop。
 > 实践建议：hook 实验建议放在临时目录；凡是会执行 shell、改文件、触发通知或调用外部服务的 hook，都要先用只读或 dry-run 版本验证。
+> 配套实验：[AHE-005、AHE-016](../../labs/agent-harness-engineering/00-Agent-Harness-实验手册.md)。
 
 ---
 

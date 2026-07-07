@@ -6,6 +6,7 @@
 > 适合读者：个人开发者、团队技术负责人、想理解 Agent Harness 稳定性机制的工程师
 > 本文定位：`learn-claude-code` 学习系列第 6 篇，承接第 5 篇上下文工程，解释错误恢复、任务系统、后台任务和定时调度如何支撑长任务。
 > 实践建议：本文涉及重试、后台命令、文件化任务和定时触发。实验建议放在临时目录，不要在真实项目根目录直接跑会写 `.tasks/`、`.memory/`、`.scheduled_tasks.json` 的教学代码。
+> 配套实验：[AHE-006、AHE-008、AHE-009、AHE-010、AHE-011](../../labs/agent-harness-engineering/00-Agent-Harness-实验手册.md)。
 
 ---
 

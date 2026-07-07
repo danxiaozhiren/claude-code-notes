@@ -6,6 +6,7 @@
 > 适合读者：个人开发者、团队技术负责人、想理解 Agent Harness 的工程师  
 > 本文定位：`learn-claude-code` 学习系列第 1 篇，从 `s01_agent_loop` 看 Claude Code-like harness 的最小骨架。  
 > 实践建议：建议在临时目录运行教学代码，不要在重要项目目录里直接试验会执行 shell 命令的 demo。
+> 配套实验：[AHE-001、AHE-002](../../labs/agent-harness-engineering/00-Agent-Harness-实验手册.md)。
 
 ---
 
@@ -401,4 +402,3 @@ Read code.py and summarize the agent_loop function.
 - [s01_agent_loop](https://github.com/shareAI-lab/learn-claude-code/tree/main/s01_agent_loop)
 - [s02_tool_use](https://github.com/shareAI-lab/learn-claude-code/tree/main/s02_tool_use)
 - [s20_comprehensive](https://github.com/shareAI-lab/learn-claude-code/tree/main/s20_comprehensive)
-

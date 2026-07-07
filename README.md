@@ -2,7 +2,7 @@
 
 > 当前定位：个人 AI Agent / Claude Code 底层原理学习、技术文章写作与实践验证资料库。  
 > 作者：wt  
-> 当前仓库快照：2026-06-10。
+> 当前仓库快照：2026-06-29。
 > 旧 Claude Code 官方能力系列的文档核查日期以正文标注为准，复用或发布前需要重新核查。
 
 ## 项目目标
@@ -54,11 +54,14 @@ AI Agent 不是单个 prompt，
 │       └── 00-Agent-Harness-实验手册.md
 ├── meta/
 │   ├── README.md
-│   └── claude-code-public-mechanisms/
-│       ├── 00-Claude-Code-系统学习路线.md
-│       └── 00-Claude-Code-八篇文章写作规划.md
+│   ├── claude-code-public-mechanisms/
+│   │   ├── 00-Claude-Code-系统学习路线.md
+│   │   └── 00-Claude-Code-八篇文章写作规划.md
+│   └── agent-harness-engineering/
+│       └── 00-Agent-Harness-收尾审计报告.md
 └── references/
-    └── README.md
+    ├── README.md
+    └── agent-harness-glossary.md
 ```
 
 ## 当前学习方向

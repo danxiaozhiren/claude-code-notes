@@ -6,6 +6,7 @@
 > 适合读者：个人开发者、团队技术负责人、想理解 Agent Harness 外部能力接入与完整运行时组合的工程师
 > 本文定位：`learn-claude-code` 学习系列第 8 篇，也是本系列收束篇。本文承接第 7 篇多 Agent 协作，解释 MCP 工具如何进入同一个工具池，以及完整 Agent Harness 为什么不是一个“大循环”，而是一组边界清晰的运行时组件。
 > 实践建议：本文涉及 MCP server、外部 API、认证、部署类工具和完整 harness 实验。实验时优先使用教学版 mock server 或只读 server；连接真实外部系统前，先确认权限、输出上限、认证方式和破坏性操作审批。
+> 配套实验：[AHE-015、AHE-016](../../labs/agent-harness-engineering/00-Agent-Harness-实验手册.md)。
 
 ---
 
